@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pokemon-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza itens horizontalmente */
+            gap: 15px; /* Espaço entre os itens */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            max-height: 80vh; /* Limita a altura máxima da lista */
+            overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+        }
+
+        .pokemon-item {
+            text-align: center;
+        }
+
+        
+        .pokemon-link {
+            display: inline-block;
+            background-color: #ffcc01;
+            color: #333;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .pokemon-link:hover {
+            background-color: #e6b800;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>PokeDex Unicesumar</h1>
+        <div class="pokemon-list">
+            <% results.forEach(pokemon => { %>
+            <div class="pokemon-item">
+                <a href="/pokemon/<%= pokemon.name %>" target="_blank" class="pokemon-link">
+                    <%= pokemon.name %>
+                </a>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
